@@ -86,5 +86,5 @@ if (hour < 6) {
 } else if (hour < 22) {
 	var hello = "Good Evening";
 } else {
-	var hello = "Good Sleep";
+	var hello = "Good Night";
 }
