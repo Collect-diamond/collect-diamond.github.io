@@ -185,7 +185,7 @@ main {
 
 /*头像*/
 .main-img {
-	display: block;
+	display: flex;
 	align-items: center;
 }
 
