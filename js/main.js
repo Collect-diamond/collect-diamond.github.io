@@ -325,35 +325,6 @@ $("#tumblr")
 		$("#link-text").html("Contact by");
 	});
 
-//自动变灰
-let myDate = new Date();
-let mon = myDate.getMonth() + 1;
-let date = myDate.getDate();
-let days = ["4.4", "5.12", "7.7", "9.9", "9.18", "12.13"];
-for (let day of days) {
-	let d = day.split(".");
-	if (mon == d[0] && date == d[1]) {
-		document.write(
-			"<style>html{-webkit-filter:grayscale(100%);-moz-filter:grayscale(100%);-ms-filter:grayscale(100%);-o-filter:grayscale(100%);filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);_filter:none}</style>"
-		);
-		$("#change").html("Silence&nbsp;in&nbsp;silence");
-		$("#change1").html("今天是中国国家纪念日，全站已切换为黑白模式");
-		window.addEventListener(
-			"load",
-			function () {
-				setTimeout(function () {
-					iziToast.show({
-						timeout: 14000,
-						icon: "fa-solid fa-clock",
-						message: "今天是中国国家纪念日",
-					});
-				}, 3800);
-			},
-			false
-		);
-	}
-}
-
 //更多页面切换
 let shoemore = false;
 $("#switchmore").on("click", function () {
@@ -364,8 +335,8 @@ $("#switchmore").on("click", function () {
 		$("#change1").html("Secret Mode On（Click again to disable.）");
 	} else {
 		$("#container").attr("class", "container");
-		$("#change").html("Hello&nbsp;World&nbsp;!");
-		$("#change1").html("一个建立于 21 世纪的小站，存活于互联网的边缘");
+		$("#change").html("Such is the life of an adventurer");
+		$("#change1").html("Hilda fan, activate on Twitter and Tumblr");
 	}
 });
 
@@ -413,8 +384,8 @@ window.addEventListener("load", function () {
 		if (window.innerWidth <= 990) {
 			//移动端隐藏更多页面
 			$("#container").attr("class", "container");
-			$("#change").html("Hello&nbsp;World&nbsp;!");
-			$("#change1").html("一个建立于 21 世纪的小站，存活于互联网的边缘");
+			$("#change").html("Such is the life of an adventurer");
+			$("#change1").html("Hilda fan, activate on Twitter and Tumblr");
 
 			//移动端隐藏弹窗页面
 			$("#box").css("display", "none");
