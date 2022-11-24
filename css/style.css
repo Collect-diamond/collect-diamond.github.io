@@ -191,8 +191,7 @@ main {
 
 .main-img img {
 	border-radius: 50%;
-	width: 100%;
-	height: 100%;
+	width: 2100px;
 }
 
 .main-img img:hover {
