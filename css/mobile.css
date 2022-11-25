@@ -18,6 +18,10 @@
         display: none;
     }
 
+    span.img-title {
+        font-size: 3.0rem;
+    }
+
     /*音乐播放器*/
     .music-text {
         max-width: 170px !important;
