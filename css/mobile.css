@@ -1,7 +1,12 @@
 @charset "utf-8";
 
 /*小于1400px时*/
-@media (max-width: 1400px) {}
+@media (max-width: 1400px) {
+    .img-title-big {
+    	font-size: 2.5rem;
+	font-family: "Pacifico-Regular" !important;
+    }
+}
 
 /*小于1200px时*/
 @media (max-width: 1200px) {
