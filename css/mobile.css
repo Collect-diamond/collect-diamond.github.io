@@ -13,7 +13,11 @@
     .container-sm {
         max-width: 1000px !important;
     }
-
+	
+    .img-title-big {
+	font-size: 1.75rem;
+	font-family: "Pacifico-Regular" !important;
+    }
     .weekday {
         display: none;
     }
