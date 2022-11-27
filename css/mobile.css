@@ -287,6 +287,10 @@
     .menu {
         display: none !important;
     }
+    .img-title-big {
+	font-size: 2.0rem;
+	font-family: "Pacifico-Regular" !important;
+    }
 }
 
 /* 大于992px时 */
@@ -310,10 +314,6 @@
     
 }
 
-.img-title-big {
-	font-size: 1.75rem;
-	font-family: "Pacifico-Regular" !important;
-    }
 /*
 菜单按钮
 */
