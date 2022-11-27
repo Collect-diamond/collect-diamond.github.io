@@ -135,7 +135,11 @@
     .col.left {
         margin-right: 0rem;
     }
-
+	
+    .img-title-big {
+	font-size: 2.25rem;
+	font-family: "Pacifico-Regular" !important;
+    }
     /*右侧栏隐藏*/
     .col.right {
         display: none;
@@ -287,10 +291,7 @@
     .menu {
         display: none !important;
     }
-    .img-title-big {
-	font-size: 2.0rem;
-	font-family: "Pacifico-Regular" !important;
-    }
+    
 }
 
 /* 大于992px时 */
