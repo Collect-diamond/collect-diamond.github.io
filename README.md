@@ -5,7 +5,7 @@
 简单的小主页，原来的看够了，重新弄了一个
 </p>
 
-![無名の主页](https://s2.loli.net/2022/07/14/K5JigfvDoNewtuS.webp)
+![IMG_20221128_135906.jpg](https://s2.loli.net/2022/11/28/4Pmq2i3BTWeusdz.jpg)
 
 >主页的 Logo 字体已经过压缩，若用本站 Logo 以外的字母会变回默认字体，这里是 [完整字体](https://file.imsyy.top/font/Pacifico-Regular.ttf)
 
