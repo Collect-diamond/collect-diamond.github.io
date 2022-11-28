@@ -1,11 +1,11 @@
 English | [Chinese](./README.md)
 
 <p>
-<strong><h2>無名の主页</h2></strong>
+<strong><h2>Collect_dimaond's Page</h2></strong>
 Simple little homepage, had enough of the original one and made a new one
 </p>
 
-![無名の主页](https://s2.loli.net/2022/07/14/K5JigfvDoNewtuS.webp)
+![火狐截图_2022-11-28T12-42-22.383Z.png](https://s2.loli.net/2022/11/28/3bHVhDJvz6t2KAC.png)
 
 >The logo font on the home page has been compressed, so if you use a font other than this logo, it will change back to the default font, Here is the [full font](https://file.imsyy.top/font/Pacifico-Regular.ttf)  
 
@@ -13,8 +13,8 @@ Simple little homepage, had enough of the original one and made a new one
 
 >Due to CDN caching, you may need `Ctrl` + `F5` to force a browser cache refresh to see the latest results
 
-- [無名の主页](https://www.imsyy.top)
-- [無名の主页 - 备用线路](https://home-imsyy.vercel.app/)
+- [Collect_diamond's Page](https://collect-diamond.tk)
+- [Original Design](https://www.imsyy.top/)
 
 ### Functions
 
@@ -64,19 +64,19 @@ This project uses `json` file to configure the site content, the configuration i
         "Oops !" , //text after clicking on the site's title
         "Oops, you found this ( click once more to close )" //text after click on site content
     ],
-    "github": "imsyy", //Github username
-    "qq": "1539250352", //QQ
-    "email": "one@imsyy.top", //email email
-    "telegram": "bottom_user", //Telegram user name
-    "twitter": "iimmsyy", //Twitter username
+    "github": "Collect-diamond", //Github username
+    "qq": "3066703409", //QQ
+    "email": "collect_diamond.@outlook.com", //email email
+    "tumblr": "Hilda0335", //Tumblr user name
+    "twitter": "Hilda_0335", //Twitter username
     "weather_api": "https://www.yiketianqi.com", //Weather API
     "link_1": [
-        "https://blog.imsyy.top/", //link_address
+        "https://", //link_address
         "fa-solid fa-blog", //icon class name
         "blog" //link text
     ],
     "link_2": [
-        "https://drive.imsyy.top/",
+        "https://",
         "fa-solid fa-cloud",
         "netdisk"
     ],
@@ -165,4 +165,5 @@ make clean all
 * [ROLL](https://www.mxnzp.com/doc/list)
 * [Hitokoto 一言](https://hitokoto.cn/)
 
+### original writer<br>
 <a title="SSL" target="_blank" href="https://myssl.com/seal/detail?domain=blog.imsyy.top"><img src="https://img.shields.io/badge/MySSL-安全认证-brightgreen"></a>&nbsp;<a title="CDN" target="_blank" href="https://cdnjs.com/"><img src="https://img.shields.io/badge/CDN-Cloudflare-blue"></a>&nbsp;<a title="Copyright" target="_blank" href="https://imsyy.top/"><img src="https://img.shields.io/badge/Copyright%20%C2%A9%202020--2022-%E7%84%A1%E5%90%8D-red"></a>
