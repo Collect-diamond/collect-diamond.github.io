@@ -2,10 +2,10 @@
 
 <p>
 <strong><h2>Collect-diamond's homepage</h2></strong>
-简单的小主页，原来的看够了，重新弄了一个
+简单的小主页,符合审美。
 </p>
 
-![火狐截图_2022-11-28T12-42-22.383Z.png](https://s2.loli.net/2022/11/28/Gg1jA8qWULEQiTw.png)
+![火狐截图_2022-11-28T12-42-22.383Z.png](https://s2.loli.net/2022/11/28/3bHVhDJvz6t2KAC.png)
 
 >主页的 Logo 字体已经过压缩，若用本站 Logo 以外的字母会变回默认字体，这里是 [完整字体](https://file.imsyy.top/font/Pacifico-Regular.ttf)
 
@@ -164,4 +164,4 @@ make clean all
 * [ROLL](https://www.mxnzp.com/doc/list)
 * [Hitokoto 一言](https://hitokoto.cn/)
 
-<a title="SSL" target="_blank" href="https://myssl.com/seal/detail?domain=blog.imsyy.top"><img src="https://img.shields.io/badge/MySSL-安全认证-brightgreen"></a>&nbsp;<a title="CDN" target="_blank" href="https://cdnjs.com/"><img src="https://img.shields.io/badge/CDN-Cloudflare-blue"></a>&nbsp;<a title="Copyright" target="_blank" href="https://imsyy.top/"><img src="https://img.shields.io/badge/Copyright%20%C2%A9%202020--2022-%E7%84%A1%E5%90%8D-red"></a>
+<a title="SSL" target="_blank" href="https://myssl.com/seal/detail?domain=blog.imsyy.top"><img src="https://img.shields.io/badge/MySSL-安全认证-brightgreen"></a>&nbsp;<a title="CDN" target="_blank" href="https://cdnjs.com/"><img src="https://img.shields.io/badge/CDN-Cloudflare-blue"></a>&nbsp;<a title="Made by" target="_blank" href="https://imsyy.top/"><img src="https://img.shields.io/badge/Copyright%20%C2%A9%202020--2022-%E7%84%A1%E5%90%8D-red"></a>
