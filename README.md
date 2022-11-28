@@ -13,8 +13,8 @@
 
 >由于 CDN 缓存原因，查看最新效果可能需要 `Ctrl` + `F5` 强制刷新浏览器缓存
 
-- [無名の主页](https://www.imsyy.top)
-- [無名の主页 - 备用线路](https://home-imsyy.vercel.app/)
+- [無名の主页(源模板)](https://www.imsyy.top)
+- [無名の主页(原模板) - 备用线路](https://home-imsyy.vercel.app/)
 
 ### 功能
 
@@ -63,11 +63,11 @@
         "Oops !", //站点介绍标题点击后文字
         "哎呀，这都被你发现了 ( 再点击一次可关闭 )" //站点介绍内容点击后文字
     ],
-    "github": "imsyy", //Github 用户名
-    "qq": "1539250352", //QQ
-    "email": "one@imsyy.top", //Email电子邮件
-    "telegram": "bottom_user", //Telegram 用户名
-    "twitter": "iimmsyy", //Twitter用户名
+    "github": "Collect-diamond", //Github 用户名
+    "qq": "3066703409", //QQ
+    "email": "3066703409@qq.com", //Email电子邮件
+    "tumblr": "Hilda0335", //Tumblr 用户名
+    "twitter": "Hilda_0335", //Twitter用户名
     "weather_api": "https://www.yiketianqi.com", //天气 API
     "link_1": [
         "https://blog.imsyy.top/", //链接地址
@@ -86,7 +86,7 @@
         ]
     ],
     "Copyright_year": "2020", //站点起始年份
-    "Copyright_text": "無名" //版权
+    "Copyright_text": "Collect_diamond" //版权
 }
 ```
 
