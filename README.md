@@ -5,7 +5,7 @@
 简单的小主页，原来的看够了，重新弄了一个
 </p>
 
-![IMG_20221128_135906.jpg](https://s2.loli.net/2022/11/28/4Pmq2i3BTWeusdz.jpg)
+![火狐截图_2022-11-28T12-42-22.383Z.png](https://s2.loli.net/2022/11/28/Gg1jA8qWULEQiTw.png)
 
 >主页的 Logo 字体已经过压缩，若用本站 Logo 以外的字母会变回默认字体，这里是 [完整字体](https://file.imsyy.top/font/Pacifico-Regular.ttf)
 
@@ -13,8 +13,8 @@
 
 >由于 CDN 缓存原因，查看最新效果可能需要 `Ctrl` + `F5` 强制刷新浏览器缓存
 
-- [無名の主页(源模板)](https://www.imsyy.top)
-- [無名の主页(原模板) - 备用线路](https://home-imsyy.vercel.app/)
+- [Collect_diamond's Page](https://collect-diamond.tk)
+- [本站模板来源于](https://www.imsyy.top)
 
 ### 功能
 
@@ -57,11 +57,11 @@
     "logo_text_2": "域名后缀",
     "des_title": [
         "Hello World !", //站点介绍标题
-        "一个建立于 21 世纪的小站，存活于互联网的边缘" //站点介绍内容
+        "Unknown" //站点介绍内容
     ],
     "des_title_change": [
         "Oops !", //站点介绍标题点击后文字
-        "哎呀，这都被你发现了 ( 再点击一次可关闭 )" //站点介绍内容点击后文字
+        "Secret Mode on ( click again to disable )" //站点介绍内容点击后文字
     ],
     "github": "Collect-diamond", //Github 用户名
     "qq": "3066703409", //QQ
@@ -70,12 +70,12 @@
     "twitter": "Hilda_0335", //Twitter用户名
     "weather_api": "https://www.yiketianqi.com", //天气 API
     "link_1": [
-        "https://blog.imsyy.top/", //链接地址
+        "https://", //链接地址
         "fa-solid fa-blog", //图标类名
         "博客" //链接文字
     ],
     "link_2": [
-        "https://drive.imsyy.top/",
+        "https://",
         "fa-solid fa-cloud",
         "网盘"
     ],
