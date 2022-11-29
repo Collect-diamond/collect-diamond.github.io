@@ -2,7 +2,7 @@
 
 <p>
 <strong><h2>Collect_diamond's homepage</h2></strong>
-简单的小主页,符合审美。 使用了Vercel平台部署。
+简单的小主页,符合审美
 </p>
 
 ![火狐截图_2022-11-28T12-42-22.383Z.png](https://s2.loli.net/2022/11/28/3bHVhDJvz6t2KAC.png)
