@@ -2,7 +2,7 @@ English | [Chinese](./README.md)
 
 <p>
 <strong><h2>Collect_dimaond's Page</h2></strong>
-Simple little homepage, had enough of the original one and made a new one
+Simple little homepage, had enough of the original one and made a new one，used Vercel to deploy
 </p>
 
 ![火狐截图_2022-11-28T12-42-22.383Z.png](https://s2.loli.net/2022/11/28/3bHVhDJvz6t2KAC.png)
