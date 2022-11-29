@@ -1,7 +1,7 @@
 简体中文 | [English](./README_EN.md)
 
 <p>
-<strong><h2>Collect-diamond's homepage</h2></strong>
+<strong><h2>Collect_diamond's homepage</h2></strong>
 简单的小主页,符合审美。
 </p>
 
@@ -13,7 +13,7 @@
 
 >由于 CDN 缓存原因，查看最新效果可能需要 `Ctrl` + `F5` 强制刷新浏览器缓存
 
-- [Collect_diamond's Page](https://collect-diamond.tk)
+- [Collect_diamond's Page](https://collect-diamond.top)
 - [Backup](https://collect-diamond.tk/)
 
 ### 功能
