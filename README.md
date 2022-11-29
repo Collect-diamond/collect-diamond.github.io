@@ -7,14 +7,14 @@
 
 ![火狐截图_2022-11-28T12-42-22.383Z.png](https://s2.loli.net/2022/11/28/3bHVhDJvz6t2KAC.png)
 
->主页的 Logo 字体已经过压缩，若用本站 Logo 以外的字母会变回默认字体，这里是 [完整字体](https://file.imsyy.top/font/Pacifico-Regular.ttf)
+>主页的 Logo 字体已经过压缩，若用本站 Logo 以外的字母会变回默认字体
 
 ### Demo
 
 >由于 CDN 缓存原因，查看最新效果可能需要 `Ctrl` + `F5` 强制刷新浏览器缓存
 
 - [Collect_diamond's Page](https://collect-diamond.tk)
-- [模板原作者主页](https://www.imsyy.top)
+- [Backup](https://collect-diamond.tk/)
 
 ### 功能
 
@@ -164,5 +164,5 @@ make clean all
 * [ROLL](https://www.mxnzp.com/doc/list)
 * [Hitokoto 一言](https://hitokoto.cn/)
 
-### 以下为原作者imsyy认证<br>
-<a title="SSL" target="_blank" href="https://myssl.com/collect-diamond.top?domain=collect-diamond.top"><img src="https://img.shields.io/badge/MySSL-安全认证-brightgreen"></a>&nbsp;<a title="CDN" target="_blank" href="https://cdnjs.com/"><img src="https://img.shields.io/badge/CDN-Cloudflare-blue"></a>&nbsp;<a title="Copyright" target="_blank" href="https://imsyy.top/"><img src="https://img.shields.io/badge/Copyright%20%C2%A9%202020--2022-%E7%84%A1%E5%90%8D-red"></a>
+### Certification<br>
+<a title="SSL" target="_blank" href="https://myssl.com/collect-diamond.top?domain=collect-diamond.top"><img src="https://img.shields.io/badge/MySSL-安全认证-brightgreen"></a>&nbsp;<a title="CDN" target="_blank" href="https://cdnjs.com/"><img src="https://img.shields.io/badge/CDN-Cloudflare-blue"></a>&nbsp;<a title="Copyright" target="_blank" href="https://collect-diamond.top/"><img src="https://img.shields.io/badge/Copyright%20%C2%A9%202020--2022-Collect_diamond-red"></a>
