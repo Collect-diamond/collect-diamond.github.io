@@ -15,6 +15,7 @@ Simple little homepage, had enough of the original one and made a new one
 
 - [Collect_diamond's Page](https://collect-diamond.top)
 - [Backup](https://collect-diamond.tk)
+- [Original author imsyy's blog](https://www.imsyy.top/)
 
 ### Functions
 
