@@ -15,6 +15,7 @@
 
 - [Collect_diamond's Page](https://collect-diamond.top)
 - [Backup](https://collect-diamond.tk/)
+- [该模板原作者为imsyy，点击跳转其主页](https://www.imsyy.top/)
 
 ### 功能
 
