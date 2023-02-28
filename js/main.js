@@ -294,21 +294,21 @@ $("#github")
 		$("#link-text").html("Go Github");
 	})
 	.mouseout(function () {
-		$("#link-text").html("Contact by");
+		$("#link-text").html("Coding or Loaf");
 	});
 $("#qq")
 	.mouseover(function () {
 		$("#link-text").html("Any problem?");
 	})
 	.mouseout(function () {
-		$("#link-text").html("Contact by");
+		$("#link-text").html("Contact me if needed :)");
 	});
 $("#email")
 	.mouseover(function () {
 		$("#link-text").html("Email me for more question");
 	})
 	.mouseout(function () {
-		$("#link-text").html("Contact by");
+		$("#link-text").html("Not checked often XD");
 	});
 $("#twitter")
 	.mouseover(function () {
@@ -322,7 +322,7 @@ $("#tumblr")
 		$("#link-text").html("Go Tumblr");
 	})
 	.mouseout(function () {
-		$("#link-text").html("Contact by");
+		$("#link-text").html("Non daily post..");
 	});
 
 //更多页面切换
