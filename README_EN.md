@@ -7,36 +7,35 @@ Simple little homepage, had enough of the original one and made a new one
 
 ![火狐截图_2022-11-28T12-42-22.383Z.png](https://s2.loli.net/2022/11/28/3bHVhDJvz6t2KAC.png)
 
->The logo font on the home page has been compressed, so if you use a font other than this logo, it will change back to the default font
+> The logo font on the home page has been compressed, so if you use a font other than this logo, it will change back to the default font
 
 ### Demo
 
->Due to CDN caching, you may need `Ctrl` + `F5` to force a browser cache refresh to see the latest results
+> Due to CDN caching, you may need `Ctrl` + `F5` to force a browser cache refresh to see the latest results
 
-- [Collect_diamond's Page](https://collect-diamond.top)
-- [Backup](https://collect-diamond.tk)
+-   [Collect_diamond&#39;s Page](https://collect-diamond.top)
+-   [Backup](https://collect-diamond.tk)
 
 ### Functions
 
-- [x] Loading animation
-- [x] Site description
-- [x] Hitokoto
-- [x] Date and time
-- [x] Live weather
-- [x] Time progress bar
-- [x] Music player
-- [x] Mobile adaptation
+-   [x] Loading animation
+-   [x] Site description
+-   [x] Hitokoto
+-   [x] Date and time
+-   [x] Live weather
+-   [x] Time progress bar
+-   [x] Music player
+-   [x] Mobile adaptation
 
-* [ ] Remove jQuery dependency
-* [ ] VUE refactoring
+*   [ ] Remove jQuery dependency
+*   [ ] VUE refactoring
 
 ### Weather
 
-Because the original weather API is unstable, the weather API has been replaced. Now you need to go to the following website to obtain the key  
+Because the original weather API is unstable, the weather API has been replaced. Now you need to go to the following website to obtain the key
 
-- to [ROLL] (https://www.mxnzp.com/doc/list) for app_id and app_secret, used to capture the city  
-
-- to [and wind weather] (https://dev.qweather.com/) to obtain the key, is used to get the weather information  
+-   to [ROLL] (https://www.mxnzp.com/doc/list) for app_id and app_secret, used to capture the city
+-   to [and wind weather] (https://dev.qweather.com/) to obtain the key, is used to get the weather information
 
 It can also be replaced by other methods
 
@@ -95,13 +94,13 @@ This project uses `json` file to configure the site content, the configuration i
 
 ### Music
 
->This project uses the `Aplayer` music player based on `MetingJS` for quick song list customization  
->*Only supported in **Mainland China**, please replace `music.js` with [the following](https://cdn.jsdelivr.net/gh/imsyy/file/js/music/music-other.js) in other regions to enable the music player to work properly
+> This project uses the `Aplayer` music player based on `MetingJS` for quick song list customization
+> \*Only supported in **Mainland China**, please replace `music.js` with [the following](https://cdn.jsdelivr.net/gh/imsyy/file/js/music/music-other.js) in other regions to enable the music player to work properly
 
 Change the parameters of `music.js` to achieve a custom song list
 
 ```js
-let server = "netease"; //netease; tencent; kugou; xiami; kuwo; 
+let server = "netease"; //netease; tencent; kugou; xiami; kuwo;
 let type = "playlist"; //song; playlist; album;
 let id = "7452421335"; //album ID; song ID; playlist ID;
 ```
@@ -110,25 +109,25 @@ let id = "7452421335"; //album ID; song ID; playlist ID;
 
 Now using `HarmonyOS Sans` open source font, using font splitting to improve loading speed
 
->Because this site's `CDN` has opened anti-leech, **non-site domain name is not accessible**, please change the font import link to the following content, otherwise **custom fonts will be invalid**
+> Because this site's `CDN` has opened anti-leech, **non-site domain name is not accessible**, please change the font import link to the following content, otherwise **custom fonts will be invalid**
 >
->`https://cdn.jsdelivr.net/gh/imsyy/file/font/HarmonyOS_Sans/regular.min.css`
+> `https://cdn.jsdelivr.net/gh/imsyy/file/font/HarmonyOS_Sans/regular.min.css`
 
 <details>
 <summary>old way</summary>
 
->As Chinese fonts are introduced in this project, Chinese fonts need to be compressed to improve the loading speed of the page (you can also cancel the use of Chinese fonts)
+> As Chinese fonts are introduced in this project, Chinese fonts need to be compressed to improve the loading speed of the page (you can also cancel the use of Chinese fonts)
 
 #### Chinese font removal traditional
 
-- Install `Python 3.7` and `pip`
-- Run `pip install fonttools`
-- Download [sc_unicode.txt](https://gist.githubusercontent.com/imaegoo/d64e5088b723c2e02c40985f55ff12db/raw/5ebd2ce49418c73459a9dfe050483409306a6c1d/sc_unicode.txt)
-- Run `pyftsubset font-name.ttf --unicodes-file=sc_unicode.txt`
+-   Install `Python 3.7` and `pip`
+-   Run `pip install fonttools`
+-   Download [sc_unicode.txt](https://gist.githubusercontent.com/imaegoo/d64e5088b723c2e02c40985f55ff12db/raw/5ebd2ce49418c73459a9dfe050483409306a6c1d/sc_unicode.txt)
+-   Run `pyftsubset font-name.ttf --unicodes-file=sc_unicode.txt`
 
 #### fonts further compressed
 
-- Compile and install ``Google woff2``
+-   Compile and install `Google woff2`
 
 ```bash
 sudo apt-get install -y git g++ make
@@ -137,33 +136,34 @@ cd woff2
 make clean all
 ```
 
-- Compress the font again
+-   Compress the font again
 
 ```
 . /woff2_compress . /font_name.ttf
 ```
 
-- Eventually the original font can be slow loaded, **load the compressed font first**
+-   Eventually the original font can be slow loaded, **load the compressed font first**
 
->For more information, please go to [虹墨空间站](https://www.imaegoo.com/2020/chinese-font-compress/) to view the original article
+> For more information, please go to [虹墨空间站](https://www.imaegoo.com/2020/chinese-font-compress/) to view the original article
 
 </details>
 
 ### Plugins
 
-* [Bootstrap](https://getbootstrap.com/)
-* [iziToast](https://izitoast.marcelodolza.com/)
-* [Font Awesome](https://fontawesome.com/)
-* [jQuery](https://jquery.com/)
-* [Aplayer](https://aplayer.js.org/)
+-   [Bootstrap](https://getbootstrap.com/)
+-   [iziToast](https://izitoast.marcelodolza.com/)
+-   [Font Awesome](https://fontawesome.com/)
+-   [jQuery](https://jquery.com/)
+-   [Aplayer](https://aplayer.js.org/)
 
 ### API
 
-* [MetingAPI By wuenci](https://api.wuenci.com/meting/api/)
-* [小歪 API](https://api.ixiaowai.cn/)
-* [和风天气](https://dev.qweather.com/)
-* [ROLL](https://www.mxnzp.com/doc/list)
-* [Hitokoto 一言](https://hitokoto.cn/)
+-   [MetingAPI By wuenci](https://api.wuenci.com/meting/api/)
+-   [小歪 API](https://api.ixiaowai.cn/)
+-   [和风天气](https://dev.qweather.com/)
+-   [ROLL](https://www.mxnzp.com/doc/list)
+-   [Hitokoto 一言](https://hitokoto.cn/)
 
-### original writer<br>
-<a title="SSL" target="_blank" href="https://myssl.com/collect-diamond.top?domain=collect-diamond.top"><img src="https://img.shields.io/badge/MySSL-安全认证-brightgreen"></a>&nbsp;<a title="CDN" target="_blank" href="https://cdnjs.com/"><img src="https://img.shields.io/badge/CDN-Cloudflare-blue"></a>&nbsp;<a title="Copyright" target="_blank" href="https://imsyy.top/"><img src="https://img.shields.io/badge/Copyright%20%C2%A9%202020--2022-Collect_diamond-red"></a>
+### original writer`<br>`
+
+<a title="SSL" target="_blank" href="https://myssl.com/collect-diamond.top?domain=collect-diamond.top"><img src="https://img.shields.io/badge/MySSL-安全认证-brightgreen"></a> <a title="CDN" target="_blank" href="https://cdnjs.com/"><img src="https://img.shields.io/badge/CDN-Cloudflare-blue"></a> <a title="Copyright" target="_blank" href="https://imsyy.top/"><img src="https://img.shields.io/badge/Copyright%20%C2%A9%202020--2022-Collect_diamond-red"></a>
