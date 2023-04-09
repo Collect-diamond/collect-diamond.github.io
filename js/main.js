@@ -193,6 +193,9 @@ function getWeatherIcon(iconCode) {
 fetch("/backend/json")
 	.then((response) => response.json())
 	.then((data) => {
+		console.log(data.country);
+		console.log(data.region);
+		console.log(data.ip);
 		if (data.country == "CN") {
 			console.log("这是中国国内IP");
 			// 在此处执行您需要做的操作，因为这个IP地址在中国境内。
