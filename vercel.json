@@ -10,25 +10,10 @@
 			"dest": "/"
 		}
 	],
-	"headers": [
-		{
-			"source": "/(.*)",
-			"headers": [
-				{
-					"key": "Access-Control-Allow-Origin",
-					"value": "https://collect-diamond.top"
-				}
-			]
-		},
-		{
-			"source": "/api/json",
-			"headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }]
-		}
-	],
 	"rewrites": [
 		{
-			"source": "/api/:path*",
-			"destination": "https://ipapi.co/:path*"
+			"source": "/api/(.*)",
+			"destination": "/api/proxy"
 		}
 	]
 }

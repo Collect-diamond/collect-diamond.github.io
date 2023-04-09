@@ -140,6 +140,10 @@ $("#hitokoto").click(function () {
 		});
 	}
 });
+
+///////////////////////////////////////////////////////////
+//-Sumulation
+///////////////////////////////////////////////////////////
 /*
 //获取天气
 //请前往 https://www.mxnzp.com/doc/list 申请 app_id 和 app_secret
@@ -147,7 +151,7 @@ $("#hitokoto").click(function () {
 const add_id = "opcquqnmlc0pjjgc"; // app_id
 const app_secret = "Y3VseDBQQTVNUmRIcS94RCtuV2ZKUT09"; // app_secret
 const key = "bc77fa9d5321427f918921618928efa7"; // key
-function getWeather() {
+function getWeather_CN() {
 	fetch(
 		"https://www.mxnzp.com/api/ip/self?app_id=" +
 			add_id +
@@ -186,7 +190,7 @@ function getWeather() {
 		.catch(console.error);
 }
 
-getWeather();
+//getWeather();
 */
 function getWeatherIcon(iconCode) {
 	const code = {
@@ -236,7 +240,7 @@ function getWeatherIcon(iconCode) {
 let api_key = "1Z8Z9O8j32e4Mqr6aMzHwmf8lR69KqnN"; // AccuWeather API key
 
 function getWeather() {
-	fetch("https://ipapi.co/json/", { mode: "no-cors" })
+	fetch("https://ipapi.co/json/")
 		.then((response) => response.json())
 		.then((data) => {
 			const city = data.city;
