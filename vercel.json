@@ -5,16 +5,16 @@
 		{
 			"source": "/backend/(.*)",
 			"destination": "/api/proxy"
+		},
+		{
+			"source": "/backend-wea/(.*)",
+			"destination": "/api/proxy"
 		}
 	],
 	"crons": [
 		{
 			"path": "/api/cron",
 			"schedule": "0 10 * * *"
-		},
-		{
-			"source": "/backend-wea/(.*)",
-			"destination": "/api/proxy"
 		}
 	]
 }
