@@ -140,7 +140,7 @@ $("#hitokoto").click(function () {
 		});
 	}
 });
-
+/*
 //获取天气
 //请前往 https://www.mxnzp.com/doc/list 申请 app_id 和 app_secret
 //请前往 https://dev.qweather.com/ 申请 key
@@ -180,6 +180,93 @@ function getWeather() {
 							$("#tem_text").html(weather.now.temp + "°C&nbsp;");
 							$("#win_text").html(weather.now.windDir);
 							$("#win_speed").html(weather.now.windScale + "级");
+						});
+				});
+		})
+		.catch(console.error);
+}
+
+getWeather();
+*/
+function getWeatherIcon(iconCode) {
+	const code = {
+		1: "\u2600",
+		2: "\u26C5",
+		3: "\u26C5",
+		4: "\u26C5",
+		5: "\uD83C\uDF27",
+		6: "\uD83D\uDCA7",
+		7: "\uD83D\uDCA7",
+		8: "\uD83D\uDE25",
+		11: "\uD83C\uDF29",
+		12: "\uD83C\uDF27",
+		13: "\uD83C\uDF27",
+		14: "\uD83C\uDF27",
+		15: "\uD83C\uDF27",
+		16: "\u2744",
+		17: "\u2744",
+		18: "\uD83C\uDF28",
+		19: "\uD83C\uDF2B",
+		20: "\u2601",
+		21: "\u2601",
+		22: "\u2601",
+		23: "\uD83C\uDF41",
+		24: "\uD83C\uDF41",
+		25: "\uD83C\uDF2C",
+		26: "\uD83C\uDF27",
+		29: "\uD83C\uDF2B",
+		30: "\uD83C\uDF2B",
+		31: "\uD83C\uDF2B",
+		32: "\uD83C\uDF2B",
+		33: "\u2600",
+		34: "\u2601",
+		35: "\uD83C\uDF27",
+		36: "\u2600",
+		37: "\uD83C\uDF2A",
+		38: "\uD83C\uDF2A",
+		39: "\uD83C\uDF27",
+		40: "\uD83C\uDF27",
+		41: "\uD83C\uDF28",
+		42: "\uD83C\uDF28",
+		43: "\u2744",
+		44: "\uD83C\uDF25",
+	};
+	return code[iconCode] || "?";
+}
+let api_key = "1Z8Z9O8j32e4Mqr6aMzHwmf8lR69KqnN"; // AccuWeather API key
+
+function getWeather() {
+	fetch("https://ipapi.co/json/")
+		.then((response) => response.json())
+		.then((data) => {
+			const city = data.city;
+			const regionCode = data.region_code;
+
+			fetch(
+				`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${api_key}&q=${city},${regionCode}`
+			)
+				.then((response) => response.json())
+				.then((location) => {
+					const citykey = location[0].Key;
+					fetch(
+						`http://dataservice.accuweather.com/currentconditions/v1/${citykey}?apikey=${api_key}`
+					)
+						.then((response) => response.json())
+						.then((weather) => {
+							$("#city_text").html(city);
+							$("#wea_icon").html(
+								getWeatherIcon(weather[0].WeatherIcon)
+							);
+							$("#wea_text").html(weather[0].WeatherText);
+							$("#tem_text").html(
+								weather[0].Temperature.Metric.Value + "°C&nbsp;"
+							);
+							$("#win_text").html(
+								weather[0].Wind.Direction.English
+							);
+							$("#win_speed").html(
+								weather[0].Wind.Speed.Metric.Value + "m/s"
+							);
 						});
 				});
 		})
