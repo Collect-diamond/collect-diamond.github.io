@@ -1,10 +1,25 @@
 {
 	"version": 2,
-
+	"routes": [
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "/(.*)",
+			"status": 404,
+			"dest": "/"
+		}
+	],
 	"rewrites": [
 		{
 			"source": "/backend/(.*)",
 			"destination": "/api/proxy"
+		}
+	],
+	"crons": [
+		{
+			"path": "/api/cron",
+			"schedule": "0 10 * * *"
 		}
 	]
 }
