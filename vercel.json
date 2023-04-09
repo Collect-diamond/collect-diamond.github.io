@@ -9,5 +9,11 @@
 			"status": 404,
 			"dest": "/"
 		}
+	],
+	"rewrites": [
+		{
+			"source": "/backend/(.*)",
+			"destination": "/api/proxy"
+		}
 	]
 }
