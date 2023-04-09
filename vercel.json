@@ -11,6 +11,10 @@
 		{
 			"path": "/api/cron",
 			"schedule": "0 10 * * *"
+		},
+		{
+			"source": "/backend-wea/(.*)",
+			"destination": "/api/proxy"
 		}
 	]
 }
