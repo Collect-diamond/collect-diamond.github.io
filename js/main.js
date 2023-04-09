@@ -320,21 +320,19 @@ getWeather();
 let api_key = "1Z8Z9O8j32e4Mqr6aMzHwmf8lR69KqnN"; // AccuWeather API key
 
 function getWeather() {
-	fetch("https://ipapi.co/json/")
+	fetch("/backend/json/")
 		.then((response) => response.json())
 		.then((data) => {
 			const city = data.city;
 			const regionCode = data.region_code;
 
 			fetch(
-				`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${api_key}&q=${city},${regionCode}`
+				`/backend-wea/cities/search?apikey=${api_key}&q=${city},${regionCode}`
 			)
 				.then((response) => response.json())
 				.then((location) => {
 					const citykey = location[0].Key;
-					fetch(
-						`http://dataservice.accuweather.com/currentconditions/v1/${citykey}?apikey=${api_key}`
-					)
+					fetch(`/backend-wea/v1/${citykey}?apikey=${api_key}`)
 						.then((response) => response.json())
 						.then((weather) => {
 							$("#city_text").html(city);

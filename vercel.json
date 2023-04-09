@@ -8,7 +8,7 @@
 		},
 		{
 			"source": "/backend-wea/(.*)",
-			"destination": "/api/proxy"
+			"destination": "/api/weaproxy"
 		}
 	],
 	"crons": [
