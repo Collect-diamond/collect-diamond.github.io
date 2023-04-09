@@ -19,6 +19,16 @@
 					"value": "https://collect-diamond.top"
 				}
 			]
+		},
+		{
+			"source": "/api/json",
+			"headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }]
+		}
+	],
+	"rewrites": [
+		{
+			"source": "/api/:path*",
+			"destination": "https://ipapi.co/:path*"
 		}
 	]
 }
