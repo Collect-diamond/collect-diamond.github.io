@@ -200,6 +200,7 @@ fetch("/backend/json")
 		} else {
 			console.log("这不是中国国内IP");
 			// 在此处执行您需要做的操作，因为这个IP地址不在中国境内。
+			getWeather_US();
 		}
 	})
 	.catch((error) => {
