@@ -190,7 +190,7 @@ function getWeatherIcon(iconCode) {
 	return code[iconCode] || "?";
 }
 
-fetch("/backend/json")
+fetch("/backend/")
 	.then((response) => response.json())
 	.then((data) => {
 		console.log(data.country);
@@ -345,7 +345,7 @@ getWeather();
 
 function getWeather_US() {
 	let api_key = "1Z8Z9O8j32e4Mqr6aMzHwmf8lR69KqnN"; // AccuWeather API key
-	fetch("/backend/json/")
+	fetch("/backend/")
 		.then((response) => response.json())
 		.then((data) => {
 			const city = data.city;

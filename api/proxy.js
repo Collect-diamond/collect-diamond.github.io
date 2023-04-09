@@ -26,30 +26,30 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 const requestIp = require("request-ip");
 
 module.exports = (req, res) => {
-	let target = "";
+	// 获取用户IP地址
+	const ip = requestIp.getClientIp(req);
 
+	const target = "";
+
+	// 检测是否是目标请求路径
 	if (req.url.startsWith("/backend")) {
-		target = "https://ipapi.co";
+		// 将目标重定向到一个新的代理服务器
+
+		target = `https://ipapi.co/${ip}/json`;
 	}
 
+	// 创建代理对象并转发请求
 	const proxy = createProxyMiddleware({
 		target,
 		changeOrigin: true,
+		secure: false,
+		headers: {
+			Connection: "keep-alive",
+		},
 		pathRewrite: {
 			"^/backend/": "/",
 		},
 	});
 
-	// 添加一个中间件来处理请求并提取 IP 地址
-	const middleware = function (req, res, next) {
-		const clientIp = requestIp.getClientIp(req);
-		req.headers["x-forwarded-for"] = clientIp;
-		next();
-	};
-
-	// 将中间件插入到代理的“栈”中
-	proxy.stack.unshift(middleware);
-
-	// 使用修改后的 proxy 处理请求
 	proxy(req, res);
 };
