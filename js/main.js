@@ -144,7 +144,7 @@ $("#hitokoto").click(function () {
 ///////////////////////////////////////////////////////////
 //-Sumulation
 ///////////////////////////////////////////////////////////
-
+/*
 //获取天气
 //请前往 https://www.mxnzp.com/doc/list 申请 app_id 和 app_secret
 //请前往 https://dev.qweather.com/ 申请 key
@@ -191,7 +191,7 @@ function getWeather() {
 }
 
 getWeather();
-
+*/
 function getWeatherIcon(iconCode) {
 	const code = {
 		1: "\u2600",
@@ -316,7 +316,7 @@ function getWeather() {
 
 getWeather();
 */
-/*
+
 let api_key = "1Z8Z9O8j32e4Mqr6aMzHwmf8lR69KqnN"; // AccuWeather API key
 
 function getWeather() {
@@ -358,7 +358,7 @@ function getWeather() {
 }
 
 getWeather();
-*/
+
 let wea = 0;
 $("#upWeather").click(function () {
 	if (wea == 0) {
