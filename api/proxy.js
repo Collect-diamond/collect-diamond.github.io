@@ -25,31 +25,33 @@ module.exports = (req, res) => {
 const { createProxyMiddleware } = require("http-proxy-middleware");
 const requestIp = require("request-ip");
 
-module.exports = (req, res) => {
-	// 获取用户IP地址
-	const ip = requestIp.getClientIp(req);
+module.exports = async (req, res) => {
+	try {
+		// 获取用户IP地址
+		const ip = await requestIp.getClientIp(req);
 
-	const target = "";
+		if (!ip) {
+			// 没有获取到用户IP地址，返回错误信息
+			return res.status(400).send("Unable to get user IP address");
+		}
 
-	// 检测是否是目标请求路径
-	if (req.url.startsWith("/backend")) {
-		// 将目标重定向到一个新的代理服务器
+		const target = `https://ipapi.co/${ip}/json`;
 
-		target = `https://ipapi.co/${ip}/json`;
+		// 创建代理对象并转发请求
+		createProxyMiddleware({
+			target,
+			changeOrigin: true,
+			secure: false,
+			headers: {
+				Connection: "keep-alive",
+			},
+			pathRewrite: {
+				"^/backend/": "/",
+			},
+		})(req, res);
+	} catch (error) {
+		// 出错处理逻辑
+		console.error(error);
+		res.status(500).send("Internal Server Error");
 	}
-
-	// 创建代理对象并转发请求
-	const proxy = createProxyMiddleware({
-		target,
-		changeOrigin: true,
-		secure: false,
-		headers: {
-			Connection: "keep-alive",
-		},
-		pathRewrite: {
-			"^/backend/": "/",
-		},
-	});
-
-	proxy(req, res);
 };
