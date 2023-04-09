@@ -144,54 +144,6 @@ $("#hitokoto").click(function () {
 ///////////////////////////////////////////////////////////
 //-Sumulation
 ///////////////////////////////////////////////////////////
-/*
-//获取天气
-//请前往 https://www.mxnzp.com/doc/list 申请 app_id 和 app_secret
-//请前往 https://dev.qweather.com/ 申请 key
-const add_id = "opcquqnmlc0pjjgc"; // app_id
-const app_secret = "Y3VseDBQQTVNUmRIcS94RCtuV2ZKUT09"; // app_secret
-const key = "bc77fa9d5321427f918921618928efa7"; // key
-function getWeather() {
-	fetch(
-		"https://www.mxnzp.com/api/ip/self?app_id=" +
-			add_id +
-			"&app_secret=" +
-			app_secret
-	)
-		.then((response) => response.json())
-		.then((data) => {
-			let str = data.data.city;
-			let city = str.replace(/市/g, "");
-			$("#city_text").html(city);
-			fetch(
-				"https://geoapi.qweather.com/v2/city/lookup?location=" +
-					city +
-					"&number=1&key=" +
-					key
-			)
-				.then((response) => response.json())
-				.then((location) => {
-					let id = location.location[0].id;
-					fetch(
-						"https://devapi.qweather.com/v7/weather/now?location=" +
-							id +
-							"&key=" +
-							key
-					)
-						.then((response) => response.json())
-						.then((weather) => {
-							$("#wea_text").html(weather.now.text);
-							$("#tem_text").html(weather.now.temp + "°C&nbsp;");
-							$("#win_text").html(weather.now.windDir);
-							$("#win_speed").html(weather.now.windScale + "级");
-						});
-				});
-		})
-		.catch(console.error);
-}
-
-getWeather();
-*/
 function getWeatherIcon(iconCode) {
 	const code = {
 		1: "\u2600",
@@ -237,6 +189,74 @@ function getWeatherIcon(iconCode) {
 	};
 	return code[iconCode] || "?";
 }
+
+fetch("/backend/json")
+	.then((response) => response.json())
+	.then((data) => {
+		if (data.country == "CN") {
+			console.log("这是中国国内IP");
+			// 在此处执行您需要做的操作，因为这个IP地址在中国境内。
+			getWeather_CN();
+		} else {
+			console.log("这不是中国国内IP");
+			// 在此处执行您需要做的操作，因为这个IP地址不在中国境内。
+		}
+	})
+	.catch((error) => {
+		console.error("获取IP地址时出错:", error);
+		// 在此处处理错误情况
+	});
+
+//获取天气
+//请前往 https://www.mxnzp.com/doc/list 申请 app_id 和 app_secret
+//请前往 https://dev.qweather.com/ 申请 key
+//const add_id = "opcquqnmlc0pjjgc"; // app_id
+//const app_secret = "Y3VseDBQQTVNUmRIcS94RCtuV2ZKUT09"; // app_secret
+//const key = "bc77fa9d5321427f918921618928efa7"; // key
+function getWeather_CN() {
+	const add_id = "opcquqnmlc0pjjgc"; // app_id
+	const app_secret = "Y3VseDBQQTVNUmRIcS94RCtuV2ZKUT09"; // app_secret
+	const key = "bc77fa9d5321427f918921618928efa7"; // key
+	fetch(
+		"https://www.mxnzp.com/api/ip/self?app_id=" +
+			add_id +
+			"&app_secret=" +
+			app_secret
+	)
+		.then((response) => response.json())
+		.then((data) => {
+			let str = data.data.city;
+			let city = str.replace(/市/g, "");
+			$("#city_text").html(city);
+			fetch(
+				"https://geoapi.qweather.com/v2/city/lookup?location=" +
+					city +
+					"&number=1&key=" +
+					key
+			)
+				.then((response) => response.json())
+				.then((location) => {
+					let id = location.location[0].id;
+					fetch(
+						"https://devapi.qweather.com/v7/weather/now?location=" +
+							id +
+							"&key=" +
+							key
+					)
+						.then((response) => response.json())
+						.then((weather) => {
+							$("#wea_text").html(weather.now.text);
+							$("#tem_text").html(weather.now.temp + "°C&nbsp;");
+							$("#win_text").html(weather.now.windDir);
+							$("#win_speed").html(weather.now.windScale + "级");
+						});
+				});
+		})
+		.catch(console.error);
+}
+
+//getWeather();
+
 /*
 let api_key = "1Z8Z9O8j32e4Mqr6aMzHwmf8lR69KqnN"; // AccuWeather API key
 
@@ -317,9 +337,10 @@ function getWeather() {
 getWeather();
 */
 
-let api_key = "1Z8Z9O8j32e4Mqr6aMzHwmf8lR69KqnN"; // AccuWeather API key
+//let api_key = "1Z8Z9O8j32e4Mqr6aMzHwmf8lR69KqnN"; // AccuWeather API key
 
-function getWeather() {
+function getWeather_US() {
+	let api_key = "1Z8Z9O8j32e4Mqr6aMzHwmf8lR69KqnN"; // AccuWeather API key
 	fetch("/backend/json/")
 		.then((response) => response.json())
 		.then((data) => {
@@ -355,7 +376,7 @@ function getWeather() {
 		.catch(console.error);
 }
 
-getWeather();
+//getWeather();
 
 let wea = 0;
 $("#upWeather").click(function () {
