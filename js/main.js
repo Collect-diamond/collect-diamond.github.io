@@ -236,7 +236,7 @@ function getWeatherIcon(iconCode) {
 let api_key = "1Z8Z9O8j32e4Mqr6aMzHwmf8lR69KqnN"; // AccuWeather API key
 
 function getWeather() {
-	fetch("https://ipapi.co/json/")
+	fetch("https://ipapi.co/json/", { mode: "no-cors" })
 		.then((response) => response.json())
 		.then((data) => {
 			const city = data.city;
