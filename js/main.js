@@ -144,14 +144,14 @@ $("#hitokoto").click(function () {
 ///////////////////////////////////////////////////////////
 //-Sumulation
 ///////////////////////////////////////////////////////////
-/*
+
 //获取天气
 //请前往 https://www.mxnzp.com/doc/list 申请 app_id 和 app_secret
 //请前往 https://dev.qweather.com/ 申请 key
 const add_id = "opcquqnmlc0pjjgc"; // app_id
 const app_secret = "Y3VseDBQQTVNUmRIcS94RCtuV2ZKUT09"; // app_secret
 const key = "bc77fa9d5321427f918921618928efa7"; // key
-function getWeather_CN() {
+function getWeather() {
 	fetch(
 		"https://www.mxnzp.com/api/ip/self?app_id=" +
 			add_id +
@@ -190,8 +190,8 @@ function getWeather_CN() {
 		.catch(console.error);
 }
 
-//getWeather();
-*/
+getWeather();
+
 function getWeatherIcon(iconCode) {
 	const code = {
 		1: "\u2600",
@@ -237,14 +237,90 @@ function getWeatherIcon(iconCode) {
 	};
 	return code[iconCode] || "?";
 }
+/*
 let api_key = "1Z8Z9O8j32e4Mqr6aMzHwmf8lR69KqnN"; // AccuWeather API key
 
 function getWeather() {
-	fetch("https://ipapi.co/json/", {
-		headers: {
-			"Access-Control-Allow-Origin": "*",
-		},
-	})
+	fetch("https://ip-api.co/json/")
+		.then((response) => response.json())
+		.then((data) => {
+			const city = data.city;
+			const regionCode = data.region;
+
+			fetch(
+				`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${api_key}&q=${city},${regionCode}`
+			)
+				.then((response) => response.json())
+				.then((location) => {
+					const citykey = location[0].Key;
+					fetch(
+						`http://dataservice.accuweather.com/currentconditions/v1/${citykey}?apikey=${api_key}`
+					)
+						.then((response) => response.json())
+						.then((weather) => {
+							$("#city_text").html(city);
+							$("#wea_icon").html(
+								getWeatherIcon(weather[0].WeatherIcon)
+							);
+							$("#wea_text").html(weather[0].WeatherText);
+							$("#tem_text").html(
+								weather[0].Temperature.Metric.Value + "°C&nbsp;"
+							);
+							$("#win_text").html(
+								weather[0].Wind.Direction.English
+							);
+							$("#win_speed").html(
+								weather[0].Wind.Speed.Metric.Value + "m/s"
+							);
+						});
+				});
+		})
+		.catch(console.error);
+}
+
+getWeather();
+*/
+/*
+let api_key = "1Z8Z9O8j32e4Mqr6aMzHwmf8lR69KqnN"; // AccuWeather API key
+
+function getWeather() {
+	navigator.geolocation.getCurrentPosition((position) => {
+		const { latitude, longitude } = position.coords;
+		fetch(
+			`http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=${api_key}&q=${latitude},${longitude}`
+		)
+			.then((response) => response.json())
+			.then((location) => {
+				const citykey = location.Key;
+				fetch(
+					`http://dataservice.accuweather.com/currentconditions/v1/${citykey}?apikey=${api_key}`
+				)
+					.then((response) => response.json())
+					.then((weather) => {
+						$("#city_text").html(city);
+						$("#wea_icon").html(
+							getWeatherIcon(weather[0].WeatherIcon)
+						);
+						$("#wea_text").html(weather[0].WeatherText);
+						$("#tem_text").html(
+							weather[0].Temperature.Metric.Value + "°C&nbsp;"
+						);
+						$("#win_text").html(weather[0].Wind.Direction.English);
+						$("#win_speed").html(
+							weather[0].Wind.Speed.Metric.Value + "m/s"
+						);
+					});
+			});
+	}, console.error);
+}
+
+getWeather();
+*/
+/*
+let api_key = "1Z8Z9O8j32e4Mqr6aMzHwmf8lR69KqnN"; // AccuWeather API key
+
+function getWeather() {
+	fetch("https://ipapi.co/json/")
 		.then((response) => response.json())
 		.then((data) => {
 			const city = data.city;
@@ -282,7 +358,7 @@ function getWeather() {
 }
 
 getWeather();
-
+*/
 let wea = 0;
 $("#upWeather").click(function () {
 	if (wea == 0) {
