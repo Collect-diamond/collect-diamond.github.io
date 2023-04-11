@@ -189,28 +189,28 @@ function getWeatherIcon(iconCode) {
 	};
 	return code[iconCode] || "?";
 }
-
-fetch("/backend/")
-	.then((response) => response.json())
-	.then((data) => {
-		console.log(data.country);
-		console.log(data.region);
-		console.log(data.ip);
-		if (data.country == "CN") {
-			console.log("这是中国国内IP");
-			// 在此处执行您需要做的操作，因为这个IP地址在中国境内。
-			getWeather_CN();
-		} else {
-			console.log("这不是中国国内IP");
-			// 在此处执行您需要做的操作，因为这个IP地址不在中国境内。
-			getWeather_US();
-		}
-	})
-	.catch((error) => {
-		console.error("获取IP地址时出错:", error);
-		// 在此处处理错误情况
-	});
-
+function getWeather() {
+	fetch("/backend/")
+		.then((response) => response.json())
+		.then((data) => {
+			console.log(data.country);
+			console.log(data.region);
+			console.log(data.ip);
+			if (data.country == "CN") {
+				console.log("这是中国国内IP");
+				// 在此处执行您需要做的操作，因为这个IP地址在中国境内。
+				getWeather_CN();
+			} else {
+				console.log("这不是中国国内IP");
+				// 在此处执行您需要做的操作，因为这个IP地址不在中国境内。
+				getWeather_US();
+			}
+		})
+		.catch((error) => {
+			console.error("获取IP地址时出错:", error);
+			// 在此处处理错误情况
+		});
+}
 //获取天气
 //请前往 https://www.mxnzp.com/doc/list 申请 app_id 和 app_secret
 //请前往 https://dev.qweather.com/ 申请 key
