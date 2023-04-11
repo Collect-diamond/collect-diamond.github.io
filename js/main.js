@@ -428,6 +428,18 @@ function time() {
 		"星期五",
 		"星期六",
 	];
+	if (navigator.language != "zh-CN") {
+		weekday = [
+			"Sunday",
+			"Monday",
+			"Tuesday",
+			"Wednesday",
+			"Thursday",
+			"Friday",
+			"Saturday",
+		];
+	}
+
 	let day = dt.getDay();
 	let h = dt.getHours();
 	let m = dt.getMinutes();
@@ -441,24 +453,46 @@ function time() {
 	if (s < 10) {
 		s = "0" + s;
 	}
-	$("#time").html(
-		y +
-			"&nbsp;年&nbsp;" +
-			mm +
-			"&nbsp;月&nbsp;" +
-			d +
-			"&nbsp;日&nbsp;" +
+	//-Language switch
+	if (navigator.language == "zh-CN")
+		$("#time").html(
+			y +
+				"&nbsp;年&nbsp;" +
+				mm +
+				"&nbsp;月&nbsp;" +
+				d +
+				"&nbsp;日&nbsp;" +
+				"<span class='weekday'>" +
+				weekday[day] +
+				"</span><br>" +
+				"<span class='time-text'>" +
+				h +
+				":" +
+				m +
+				":" +
+				s +
+				"</span>"
+		);
+	else
+		$("#time").html(
 			"<span class='weekday'>" +
-			weekday[day] +
-			"</span><br>" +
-			"<span class='time-text'>" +
-			h +
-			":" +
-			m +
-			":" +
-			s +
-			"</span>"
-	);
+				weekday[day] +
+				"&nbsp;&nbsp;" +
+				mm +
+				"&nbsp;/&nbsp;" +
+				d +
+				"&nbsp;/&nbsp;" +
+				y +
+				"&nbsp;&nbsp;" +
+				"</span><br>" +
+				"<span class='time-text'>" +
+				h +
+				":" +
+				m +
+				":" +
+				s +
+				"</span>"
+		);
 	t = setTimeout(time, 1000);
 }
 
