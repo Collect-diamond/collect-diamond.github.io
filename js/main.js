@@ -211,6 +211,7 @@ function getWeather() {
 			// 在此处处理错误情况
 		});
 }
+getWeather();
 //获取天气
 //请前往 https://www.mxnzp.com/doc/list 申请 app_id 和 app_secret
 //请前往 https://dev.qweather.com/ 申请 key
