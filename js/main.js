@@ -314,7 +314,6 @@ function getWeather_US() {
 							);
 						})
 						.catch((error) => {
-							$("#city_text").html("=-= Loading timeout =-="); // Update HTML with error message
 							console.error(error);
 						});
 				})
