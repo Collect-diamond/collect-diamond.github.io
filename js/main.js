@@ -222,6 +222,14 @@ function getWeather_CN() {
 	const add_id = "opcquqnmlc0pjjgc"; // app_id
 	const app_secret = "Y3VseDBQQTVNUmRIcS94RCtuV2ZKUT09"; // app_secret
 	const key = "bc77fa9d5321427f918921618928efa7"; // key
+
+	//-Set up timeout function catch
+	let timeout = new Promise((_, reject) => {
+		setTimeout(() => {
+			reject(new Error("Timeout"));
+		}, 10000); // 10 second timeout
+	});
+
 	fetch(
 		"https://www.mxnzp.com/api/ip/self?app_id=" +
 			add_id +
@@ -242,22 +250,86 @@ function getWeather_CN() {
 				.then((response) => response.json())
 				.then((location) => {
 					let id = location.location[0].id;
-					fetch(
-						"https://devapi.qweather.com/v7/weather/now?location=" +
-							id +
-							"&key=" +
-							key
-					)
-						.then((response) => response.json())
-						.then((weather) => {
-							$("#wea_text").html(weather.now.text);
-							$("#tem_text").html(weather.now.temp + "°C&nbsp;");
-							$("#win_text").html(weather.now.windDir);
-							$("#win_speed").html(weather.now.windScale + "级");
-						});
+					//- Fetch weather and race with timeout
+					Promise.race([
+						fetch(
+							"https://devapi.qweather.com/v7/weather/now?location=" +
+								id +
+								"&key=" +
+								key
+						)
+							.then((response) => response.json())
+							.then((weather) => {
+								$("#wea_text").html(weather.now.text);
+								$("#tem_text").html(
+									weather.now.temp + "°C&nbsp;"
+								);
+								$("#win_text").html(weather.now.windDir);
+								$("#win_speed").html(
+									weather.now.windScale + "级"
+								);
+							}),
+						timeout,
+					]).catch((error) => {
+						console.error(error);
+						$("#city_text").html("=-= Loading timeout =-=");
+					});
 				});
 		})
 		.catch(console.error);
+}
+function getWeather_US() {
+	let api_key = "pU4DyKIUvgVIA2MAWGHkUhtgCoxsEfXR"; //^ AccuWeather API key
+	fetch("/backend/")
+		.then((response) => response.json())
+		.then((data) => {
+			const city = data.city;
+			const regionCode = data.region_code;
+
+			fetch(
+				`/backend-wea/locations/v1/cities/search?apikey=${api_key}&q=${city},${regionCode}`
+			)
+				.then((response) => response.json())
+				.then((location) => {
+					const citykey = location[0].Key;
+					fetch(
+						`/backend-wea/currentconditions/v1/${citykey}?apikey=${api_key}`
+					)
+						.then((response) => response.json())
+						.then((weather) => {
+							$("#city_text").html(city);
+							$("#wea_icon").html(
+								getWeatherIcon(weather[0].WeatherIcon)
+							);
+							$("#wea_text").html(weather[0].WeatherText);
+							$("#tem_text").html(
+								weather[0].Temperature.Metric.Value + "°C&nbsp;"
+							);
+							$("#win_text").html(
+								weather[0].Wind.Direction.English
+							);
+							$("#win_speed").html(
+								weather[0].Wind.Speed.Metric.Value + "m/s"
+							);
+						})
+						.catch(() => {
+							$("#city_text").html("=-= Loading failed =-=");
+						});
+				})
+				.catch(() => {
+					$("#city_text").html("=-= Loading failed =-=");
+				});
+		})
+		.catch(() => {
+			$("#city_text").html("=-= Loading failed =-=");
+		});
+
+	//- set timeout in case of slow loading weather data
+	setTimeout(() => {
+		if ($("#city_text").html() === "") {
+			$("#city_text").html("=-= Loading timeout =-=");
+		}
+	}, 10000); //% 10 second timeout
 }
 
 //getWeather();
@@ -343,7 +415,7 @@ getWeather();
 */
 
 //let api_key = "1Z8Z9O8j32e4Mqr6aMzHwmf8lR69KqnN"; // AccuWeather API key
-
+/*
 function getWeather_US() {
 	let api_key = "pU4DyKIUvgVIA2MAWGHkUhtgCoxsEfXR"; // AccuWeather API key
 	fetch("/backend/")
@@ -382,7 +454,7 @@ function getWeather_US() {
 		})
 		.catch(console.error);
 }
-
+*/
 //getWeather();
 
 let wea = 0;
