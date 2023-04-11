@@ -278,8 +278,9 @@ function getWeather_CN() {
 		})
 		.catch(console.error);
 }
+
 function getWeather_US() {
-	let api_key = "pU4DyKIUvgVIA2MAWGHkUhtgCoxsEfXR"; //^ AccuWeather API key
+	let api_key = "pU4DyKIUvgVIA2MAWGHkUhtgCoxsEfXR"; // AccuWeather API key
 	fetch("/backend/")
 		.then((response) => response.json())
 		.then((data) => {
@@ -312,24 +313,20 @@ function getWeather_US() {
 								weather[0].Wind.Speed.Metric.Value + "m/s"
 							);
 						})
-						.catch(() => {
-							$("#city_text").html("=-= Loading failed =-=");
+						.catch((error) => {
+							$("#city_text").html("=-= Loading timeout =-="); // Update HTML with error message
+							console.error(error);
 						});
 				})
-				.catch(() => {
-					$("#city_text").html("=-= Loading failed =-=");
+				.catch((error) => {
+					$("#city_text").html("=-= Loading timeout =-="); // Update HTML with error message
+					console.error(error);
 				});
 		})
-		.catch(() => {
-			$("#city_text").html("=-= Loading failed =-=");
+		.catch((error) => {
+			$("#city_text").html("=-= Loading timeout =-="); // Update HTML with error message
+			console.error(error);
 		});
-
-	//- set timeout in case of slow loading weather data
-	setTimeout(() => {
-		if ($("#city_text").html() === "") {
-			$("#city_text").html("=-= Loading timeout =-=");
-		}
-	}, 10000); //% 10 second timeout
 }
 
 //getWeather();
