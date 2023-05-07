@@ -4,7 +4,7 @@
 	"rewrites": [
 		{
 			"source": "/backend-ip/(.*)",
-			"destination": "/api/proxy"
+			"destination": "/api/ipproxy"
 		},
 		{
 			"source": "/backend-wea/(.*)",
