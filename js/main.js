@@ -190,7 +190,7 @@ function getWeatherIcon(iconCode) {
 	return code[iconCode] || "?";
 }
 function getWeather() {
-	fetch("/backend/")
+	fetch("/backend-ip/")
 		.then((response) => response.json())
 		.then((data) => {
 			console.log(data.country);
@@ -281,7 +281,7 @@ function getWeather_CN() {
 
 function getWeather_US() {
 	let api_key = "pU4DyKIUvgVIA2MAWGHkUhtgCoxsEfXR"; // AccuWeather API key
-	fetch("/backend/")
+	fetch("/backend-ip/")
 		.then((response) => response.json())
 		.then((data) => {
 			const city = data.city;
@@ -414,7 +414,7 @@ getWeather();
 /*
 function getWeather_US() {
 	let api_key = "pU4DyKIUvgVIA2MAWGHkUhtgCoxsEfXR"; // AccuWeather API key
-	fetch("/backend/")
+	fetch("/backend-ip/")
 		.then((response) => response.json())
 		.then((data) => {
 			const city = data.city;
