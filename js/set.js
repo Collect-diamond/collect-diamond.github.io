@@ -61,7 +61,7 @@ $(function () {
 // 背景图片 Cookies
 function setBgImg(bg_img) {
 	if (bg_img) {
-		Cookies.set("bg_img", bg_img, {
+		global.Cookies.set("bg_img", bg_img, {
 			expires: 36500,
 		});
 		return true;
@@ -71,7 +71,7 @@ function setBgImg(bg_img) {
 
 // 获取背景图片 Cookies
 function getBgImg() {
-	let bg_img_local = Cookies.get("bg_img");
+	let bg_img_local = global.Cookies.get("bg_img");
 	if (bg_img_local && bg_img_local !== "{}") {
 		return JSON.parse(bg_img_local);
 	} else {
