@@ -48,6 +48,7 @@ module.exports = async (req, res) => {
 			pathRewrite: {
 				"^/backend-ip/": "/",
 			},
+			cache: false, //禁用缓存
 		})(req, res);
 	} catch (error) {
 		// 出错处理逻辑
