@@ -35,16 +35,16 @@ module.exports = async (req, res) => {
 			return res.status(400).send("Unable to get user IP address");
 		}
 
-		const target = `https://ipapi.co/${ip}/json`;
+		const target = `https://ipapi.co/json`;
 
 		// 创建代理对象并转发请求
 		createProxyMiddleware({
 			target,
 			changeOrigin: true,
-			secure: false,
-			headers: {
-				Connection: "keep-alive",
-			},
+			//secure: false,
+			//headers: {
+			//	Connection: "keep-alive",
+			//},
 			pathRewrite: {
 				"^/backend-ip/": "/",
 			},
