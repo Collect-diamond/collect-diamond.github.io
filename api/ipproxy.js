@@ -28,14 +28,14 @@ const requestIp = require("request-ip");
 module.exports = async (req, res) => {
 	try {
 		// 获取用户IP地址
-		const cilent_ip = await requestIp.getClientIp(req);
+		const ip = await requestIp.getClientIp(req);
 
 		if (!ip) {
 			// 没有获取到用户IP地址，返回错误信息
 			return res.status(400).send("Unable to get user IP address");
 		}
 
-		let target = `https://ipapi.co/${cilent_ip}/json`;
+		let target = `https://ipapi.co/${ip}/json`;
 
 		// 创建代理对象并转发请求
 		createProxyMiddleware({
