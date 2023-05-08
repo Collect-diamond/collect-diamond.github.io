@@ -62,7 +62,7 @@ $(function () {
 function setBgImg(bg_img) {
 	if (bg_img) {
 		Cookies.set("bg_img", bg_img, {
-			expires: 36500,
+			expires: 1,
 		});
 		return true;
 	}
