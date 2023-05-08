@@ -281,7 +281,7 @@ function getWeather_CN() {
 
 function getWeather_US() {
 	let api_key = "pU4DyKIUvgVIA2MAWGHkUhtgCoxsEfXR"; // AccuWeather API key
-	fetch("/backend-ip/")
+	fetch("/backend/")
 		.then((response) => response.json())
 		.then((data) => {
 			const city = data.city;
