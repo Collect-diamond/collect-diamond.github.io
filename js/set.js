@@ -60,9 +60,11 @@ $(function () {
 
 // 背景图片 Cookies
 function setBgImg(bg_img) {
+	var millisecond = new Date().getTime();
+	var expiresTime = new Date(millisecond + 1 * 1000);
 	if (bg_img) {
 		Cookies.set("bg_img", bg_img, {
-			expires: 1,
+			expires: expiresTime,
 		});
 		return true;
 	}
