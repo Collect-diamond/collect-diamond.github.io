@@ -317,6 +317,7 @@ function getWeather_US(ip_city, ip_region_code) {
 		});
 }
 
+/*
 function getWeather_US() {
 	let api_key = "pU4DyKIUvgVIA2MAWGHkUhtgCoxsEfXR"; // AccuWeather API key
 	fetch("/backend/")
@@ -365,6 +366,7 @@ function getWeather_US() {
 			console.error(error);
 		});
 }
+*/
 //getWeather();
 
 /*
