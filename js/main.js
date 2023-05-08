@@ -190,11 +190,11 @@ function getWeatherIcon(iconCode) {
 	return code[iconCode] || "?";
 }
 function getWeather() {
-	fetch("/backend/")
+	fetch("/backend-ip/")
 		.then((response) => response.json())
 		.then((data) => {
-			console.log(data.country_code);
-			console.log(data.region_code);
+			console.log(data.country);
+			console.log(data.region);
 			console.log(data.ip);
 			if (data.country == "CN") {
 				console.log("这是中国国内IP");
@@ -203,7 +203,7 @@ function getWeather() {
 			} else {
 				console.log("这不是中国国内IP");
 				// 在此处执行您需要做的操作，因为这个IP地址不在中国境内。
-				getWeather_US(data.city, data.region_code);
+				getWeather_US();
 			}
 		})
 		.catch((error) => {
@@ -279,6 +279,7 @@ function getWeather_CN() {
 		.catch(console.error);
 }
 
+/*
 function getWeather_US(ip_city, ip_region_code) {
 	let api_key = "pU4DyKIUvgVIA2MAWGHkUhtgCoxsEfXR"; // AccuWeather API key
 
@@ -316,11 +317,11 @@ function getWeather_US(ip_city, ip_region_code) {
 			console.error(error);
 		});
 }
+*/
 
-/*
 function getWeather_US() {
 	let api_key = "pU4DyKIUvgVIA2MAWGHkUhtgCoxsEfXR"; // AccuWeather API key
-	fetch("/backend/")
+	fetch("/backend-ip/")
 		.then((response) => response.json())
 		.then((data) => {
 			const city = data.city;
@@ -366,7 +367,7 @@ function getWeather_US() {
 			console.error(error);
 		});
 }
-*/
+
 //getWeather();
 
 /*
