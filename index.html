@@ -512,19 +512,7 @@
     <script type="text/javascript"
         src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-y/bootstrap/5.1.0/js/bootstrap.min.js">
     </script>
-    <script>
-        // 获取所有的cookie
-    const cookies = document.cookie.split(";");
-
-    // 迭代和清空所有非 bg_img cookie
-    cookies.forEach(cookie => {
-    const [name, _] = cookie.trim().split("=");
-    if (name !== "bg_img") {
-    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-  }
-});
-    console.log("deleted!!!")
-    </script>
+    
 </body>
 
 </html>

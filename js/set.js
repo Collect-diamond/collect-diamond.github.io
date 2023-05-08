@@ -64,7 +64,7 @@ function setBgImg(bg_img) {
 	var expiresTime = new Date(millisecond + 1 * 1000);
 	if (bg_img) {
 		Cookies.set("bg_img", bg_img, {
-			expires: expiresTime,
+			expires: 0,
 		});
 		return true;
 	}
