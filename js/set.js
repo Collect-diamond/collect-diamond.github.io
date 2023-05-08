@@ -8,7 +8,7 @@ GitHub：https://github.com/imsyy/home
 /* 自定义配置 */
 /* 尚未完善 */
 
-//import Cookies from "js-cookie";
+import Cookies from "js-cookie";
 $(function () {
 	let url = "../setting.json";
 	$.getJSON(url, function (data) {
