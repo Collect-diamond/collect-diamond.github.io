@@ -2,5 +2,8 @@
   "devDependencies": {
     "http-proxy-middleware": "^2.0.6",
     "request-ip": "^3.3.0"
+  },
+  "dependencies": {
+    "js-cookie": "^3.0.5"
   }
 }
