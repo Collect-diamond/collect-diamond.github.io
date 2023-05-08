@@ -4,41 +4,6 @@
 GitHub：https://github.com/imsyy/home
 版权所有，请勿删除
 */
-// 获取所有cookie并将其存储在对象中
-function getCookies() {
-	var cookies = {};
-	var cookieList = document.cookie.split(";");
-
-	for (var i = 0; i < cookieList.length; i++) {
-		var cookie = cookieList[i].trim();
-		var cookieName = cookie.substr(0, cookie.indexOf("="));
-
-		if (cookieName != "bg_img") {
-			// 排除名称为bg_img的cookie
-			cookies[cookieName] = cookie.substr(cookie.indexOf("=") + 1);
-		}
-	}
-
-	return cookies;
-}
-
-// 删除所有cookie
-function deleteAllCookies() {
-	var cookies = getCookies();
-
-	for (var cookieName in cookies) {
-		document.cookie =
-			cookieName + "=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
-	}
-}
-
-// 设置cookie
-function setCookie(name, value) {
-	document.cookie = name + "=" + value + "; path=/";
-}
-
-// 每次访问时重置cookie
-deleteAllCookies();
 
 //弹窗样式
 iziToast.settings({
