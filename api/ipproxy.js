@@ -41,10 +41,10 @@ module.exports = async (req, res) => {
 		createProxyMiddleware({
 			target,
 			changeOrigin: true,
-			//secure: false,
-			//headers: {
-			//	Connection: "keep-alive",
-			//},
+			secure: false,
+			headers: {
+				Connection: "keep-alive",
+			},
 			pathRewrite: {
 				"^/backend-ip/": "/",
 			},
