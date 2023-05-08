@@ -12,8 +12,7 @@ module.exports = async (req, res) => {
 			return res.status(400).send("Unable to get user IP address");
 		}
 
-		const target = `http://api.ipapi.com/api/${ip}
-    ? access_key = ${api_key}`;
+		const target = `http://api.ipapi.com/api/${ip}?access_key=${api_key}`;
 
 		// 创建代理对象并转发请求
 		createProxyMiddleware({
