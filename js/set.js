@@ -8,7 +8,7 @@ GitHub：https://github.com/imsyy/home
 /* 自定义配置 */
 /* 尚未完善 */
 $(function () {
-	//let url = "../setting.json";
+	let url = "../setting.json";
 	$.getJSON(url, function (data) {
 		/* 页头数据 */
 		$("title").text(data.title);
