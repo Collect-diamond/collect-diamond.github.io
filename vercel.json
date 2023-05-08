@@ -9,6 +9,10 @@
 		{
 			"source": "/backend-wea/(.*)",
 			"destination": "/api/weaproxy"
+		},
+		{
+			"source": "/backend/(.*)",
+			"destination": "/api/testproxy"
 		}
 	],
 	"crons": [
