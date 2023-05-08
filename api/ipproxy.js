@@ -28,7 +28,7 @@ const requestIp = require("request-ip");
 module.exports = async (req, res) => {
 	try {
 		// 获取用户IP地址
-		let cilent_ip = await requestIp.getClientIp(req);
+		const cilent_ip = await requestIp.getClientIp(req);
 
 		if (!ip) {
 			// 没有获取到用户IP地址，返回错误信息
