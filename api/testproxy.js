@@ -6,7 +6,7 @@ module.exports = (req, res) => {
 	// 代理目标地址
 	// 这里使用 backend-ip 主要用于区分 vercel serverless 的 api 路径
 	if (req.url.startsWith("/backend")) {
-		target = "https://ipapi.co/json";
+		target = "https://ipapi.co";
 	}
 
 	// 创建代理对象并转发请求

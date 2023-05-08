@@ -190,7 +190,7 @@ function getWeatherIcon(iconCode) {
 	return code[iconCode] || "?";
 }
 function getWeather() {
-	fetch("/backend/")
+	fetch("/backend/json")
 		.then((response) => response.json())
 		.then((data) => {
 			console.log(data.country);
