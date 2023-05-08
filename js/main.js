@@ -190,11 +190,11 @@ function getWeatherIcon(iconCode) {
 	return code[iconCode] || "?";
 }
 function getWeather() {
-	fetch("/backend-ip/")
+	fetch("/backend/")
 		.then((response) => response.json())
 		.then((data) => {
-			console.log(data.country);
-			console.log(data.region);
+			console.log(data.country_code);
+			console.log(data.region_name);
 			console.log(data.ip);
 			if (data.country == "CN") {
 				console.log("这是中国国内IP");
