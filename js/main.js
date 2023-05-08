@@ -5,6 +5,10 @@ GitHub：https://github.com/imsyy/home
 版权所有，请勿删除
 */
 
+import { inject } from "@vercel/analytics";
+
+inject();
+
 //弹窗样式
 iziToast.settings({
 	timeout: 10000,
