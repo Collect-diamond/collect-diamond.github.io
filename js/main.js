@@ -203,7 +203,7 @@ function getWeather() {
 			} else {
 				console.log("这不是中国国内IP");
 				// 在此处执行您需要做的操作，因为这个IP地址不在中国境内。
-				getWeather_US();
+				getWeather_US(data.city, data.region_code);
 			}
 		})
 		.catch((error) => {
@@ -279,6 +279,44 @@ function getWeather_CN() {
 		.catch(console.error);
 }
 
+function getWeather_US(ip_city, ip_region_code) {
+	let api_key = "pU4DyKIUvgVIA2MAWGHkUhtgCoxsEfXR"; // AccuWeather API key
+
+	const city = ip_city;
+	const regionCode = ip_region_code;
+
+	fetch(
+		`/backend-wea/locations/v1/cities/search?apikey=${api_key}&q=${city},${regionCode}`
+	)
+		.then((response) => response.json())
+		.then((location) => {
+			const citykey = location[0].Key;
+			fetch(
+				`/backend-wea/currentconditions/v1/${citykey}?apikey=${api_key}`
+			)
+				.then((response) => response.json())
+				.then((weather) => {
+					$("#city_text").html(city);
+					$("#wea_icon").html(getWeatherIcon(weather[0].WeatherIcon));
+					$("#wea_text").html(weather[0].WeatherText);
+					$("#tem_text").html(
+						weather[0].Temperature.Metric.Value + "°C&nbsp;"
+					);
+					$("#win_text").html(weather[0].Wind.Direction.English);
+					$("#win_speed").html(
+						weather[0].Wind.Speed.Metric.Value + "m/s"
+					);
+				})
+				.catch((error) => {
+					console.error(error);
+				});
+		})
+		.catch((error) => {
+			$("#city_text").html("=-= Loading timeout =-="); // Update HTML with error message
+			console.error(error);
+		});
+}
+
 function getWeather_US() {
 	let api_key = "pU4DyKIUvgVIA2MAWGHkUhtgCoxsEfXR"; // AccuWeather API key
 	fetch("/backend/")
@@ -327,7 +365,6 @@ function getWeather_US() {
 			console.error(error);
 		});
 }
-
 //getWeather();
 
 /*
