@@ -630,7 +630,7 @@ $("#social")
 
 $("#github")
 	.mouseover(function () {
-		$("#link-text").html("Go Github");
+		$("#link-text").html("My Github Page");
 	})
 	.mouseout(function () {
 		$("#link-text").html("Coding or Loaf");
@@ -640,14 +640,14 @@ $("#qq")
 		$("#link-text").html("Any problem?");
 	})
 	.mouseout(function () {
-		$("#link-text").html("Contact me if needed :)");
+		$("#link-text").html("Contact me :)");
 	});
 $("#email")
 	.mouseover(function () {
-		$("#link-text").html("Email me for more question");
+		$("#link-text").html("My main Email");
 	})
 	.mouseout(function () {
-		$("#link-text").html("Not checked often XD");
+		$("#link-text").html("Not checked often :)");
 	});
 $("#youtube")
 	.mouseover(function () {
@@ -661,7 +661,7 @@ $("#twitter")
 		$("#link-text").html("Go Twitter");
 	})
 	.mouseout(function () {
-		$("#link-text").html("I'm more active on twitter");
+		$("#link-text").html("My Twitter Page");
 	});
 $("#tumblr")
 	.mouseover(function () {
