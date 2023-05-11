@@ -649,6 +649,13 @@ $("#email")
 	.mouseout(function () {
 		$("#link-text").html("Not checked often XD");
 	});
+$("#youtube")
+	.mouseover(function () {
+		$("#link-text").html("Subscribe!!!");
+	})
+	.mouseout(function () {
+		$("#link-text").html("My Youtube Page");
+	});
 $("#twitter")
 	.mouseover(function () {
 		$("#link-text").html("Go Twitter");

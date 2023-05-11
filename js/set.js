@@ -31,6 +31,7 @@ $(function () {
 			"https://wpa.qq.com/msgrd?v=3&uin=" + data.qq + "&site=qq&menu=yes"
 		);
 		$("#email").attr("href", "mailto:" + data.email);
+		$("#twitter").attr("href", "https://www.youtube.com/" + data.youtube);
 		$("#twitter").attr("href", "https://twitter.com/" + data.twitter);
 		$("#tumblr").attr("href", "https://www.tumblr.com/" + data.tumblr);
 		/* 快捷链接 */
